@@ -12,10 +12,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('unit_id')->constrained('unit_items')->onDelete('cascade');
-            $table->dateTime('borrow_start');
-            $table->dateTime('borrow_end');
+            $table->dateTime('borrow_end')->nullable();
             $table->string('description');
-            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->enum('status', ['pending', 'approved', 'returned', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }

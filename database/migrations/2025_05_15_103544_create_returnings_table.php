@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('returnings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('borrowing_id')->constrained('borrowings')->onDelete('cascade');
+            $table->foreignId('borrowing_id')->constrained('borrowings')->onDelete('restrict');
             $table->string('proof_image');
             $table->timestamps();
         });

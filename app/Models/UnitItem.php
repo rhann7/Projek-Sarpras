@@ -22,6 +22,6 @@ class UnitItem extends Model
 
     public function borrowing()
     {
-        return $this->hasMany(Borrowing::class);
+        return $this->belongsToMany(Borrowing::class);
     }
 }

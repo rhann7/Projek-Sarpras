@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('used_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('borrowing_id')->constrained('borrowings')->onDelete('cascade');
+            $table->foreignId('borrowing_id')->constrained('borrowings')->onDelete('restrict');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('description');
             $table->timestamps();
